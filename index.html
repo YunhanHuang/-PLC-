@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>基于耦合机器学习模型的PLC自平衡控制系统</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      @keyframes wave {
+        0% { transform: translateX(0); }
+        50% { transform: translateX(-20px); }
+        100% { transform: translateX(0); }
+      }
+      .animate-wave {
+        animation: wave 4s ease-in-out infinite;
+      }
+      /* 钻进动画：模拟螺旋向上移动的视觉效果（螺纹向上走，钻头向下钻） */
+      @keyframes drill-scroll-up {
+        0% { transform: translateY(0); }
+        100% { transform: translateY(-25px); } /* 移动一个螺距 */
+      }
+      /* 反转/注浆动画：模拟螺旋向下移动 */
+      @keyframes drill-scroll-down {
+        0% { transform: translateY(-25px); }
+        100% { transform: translateY(0); }
+      }
+      
+      .animate-drill-up {
+        animation: drill-scroll-up 0.5s linear infinite; 
+      }
+      .animate-drill-down {
+        animation: drill-scroll-down 0.5s linear infinite; 
+      }
+
+      @keyframes pulse-flow {
+        0% { stroke-dashoffset: 20; }
+        100% { stroke-dashoffset: 0; }
+      }
+      .flow-line {
+        stroke-dasharray: 5;
+        animation: pulse-flow 1s linear infinite;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.555.0"
+  }
+}
+</script>
+</head>
+  <body class="bg-slate-900 text-slate-100 antialiased overflow-hidden">
+    <div id="root" class="h-screen w-screen flex flex-col"></div>
+  </body>
+</html>
